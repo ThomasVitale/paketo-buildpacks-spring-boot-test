@@ -1,0 +1,27 @@
+version: "2.4"
+services:
+  demo-with-dockerfile:
+    image: "thomasvitale/demo-with-dockerfile:1.0"
+    container_name: "demo-with-dockerfile"
+    ports:
+      - 8080:8080
+    cpus: 2
+    mem_limit: "1g"
+
+  demo-with-paketo:
+    image: "thomasvitale/demo-with-paketo:1.0"
+    container_name: "demo-with-paketo"
+    ports:
+      - 8181:8080
+    cpus: 2
+    mem_limit: "1g"
+
+  demo-with-paketo-and-property:
+    image: "thomasvitale/demo-with-paketo:1.0"
+    container_name: "demo-with-paketo-and-property"
+    ports:
+      - 8282:8080
+    cpus: 2
+    mem_limit: "1g"
+    environment:
+      - JAVA_TOOL_OPTIONS=-XX:ActiveProcessorCount=2
